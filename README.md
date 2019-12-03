@@ -149,13 +149,15 @@ Separate rules with **|**.
 ### Properties
 This component uses the same props as <TextInput>. Below are additional props for this component:  
 
-Prop        | Type    | Optional | Defaul  | Description
+Prop        | Type    | Optional | Default  | Description
 ----------- | ------- | -------- | ------- | -----------------------
 `minLength`         | number   | Yes      | 0          | Min length for password
 `ruleNames`         | string   | Yes      | _Above_      | List of rule name to check password
 `strengLevels`      | object array | Yes   | _Above_    | List of password strength level with label, label color, percentage of width, bar color
 `tooShort`          | object   | Yes      | _Above_    | enabled, label, label color, percentage of width, bar color for too short
 `minLevel`          | number   | Yes      | 2          | Min level to pass password validation
+`selectionColor` | string | Yes |   | Color of the selection
+`wrapperStyle` | object/style | Yes |   | Style for the top most <View> wrapping everything
 `inputWraperStyle`  | object   | Yes      |            | Style for <View> wrapped password input
 `inputStyle`        | object/style   | Yes      |            | Style for password input
 `strengthWrapperStyle` | object/style | Yes      |            | Style for <View> wrapped password strength bar and description

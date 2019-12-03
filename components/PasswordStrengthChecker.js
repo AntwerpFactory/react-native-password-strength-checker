@@ -97,6 +97,8 @@ export default class PasswordStrengthChecker extends Component {
     barColor: PropTypes.string,
     barWidthPercent: PropTypes.number,
     showBarOnEmpty: PropTypes.bool,
+    selectionColor: PropTypes.string,
+    wrapperStyle: ViewPropTypes.style,
   };
 
   constructor(props) {
@@ -214,11 +216,11 @@ export default class PasswordStrengthChecker extends Component {
   }
 
   renderPasswordInput() {
-    const { inputWrapperStyle, inputStyle } = this.props;
+    const { inputWrapperStyle, inputStyle, selectionColor } = this.props;
     return (
       <View style={[styles.inputWrapper, inputWrapperStyle]}>
         <TextInput
-          selectionColor="#fff"
+          selectionColor={selectionColor}
           autoCapitalize="none"
           autoCorrect={false}
           multiline={false}
@@ -325,8 +327,10 @@ export default class PasswordStrengthChecker extends Component {
   }
 
   render() {
+    const {wrapperStyle} = this.props;
+
     return (
-      <View style={styles.wrapper}>
+      <View style={[styles.wrapper, wrapperStyle]}>
         {this.renderPasswordInput()}
         {this.renderPasswordStrength()}
       </View>
