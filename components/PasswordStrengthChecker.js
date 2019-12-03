@@ -99,6 +99,9 @@ export default class PasswordStrengthChecker extends Component {
     showBarOnEmpty: PropTypes.bool,
     selectionColor: PropTypes.string,
     wrapperStyle: ViewPropTypes.style,
+    label: PropTypes.string,
+    labelStyle: Text.propTypes.style,
+    labelWrapperStyle: ViewPropTypes.style,
   };
 
   constructor(props) {
@@ -327,11 +330,16 @@ export default class PasswordStrengthChecker extends Component {
   }
 
   render() {
-    const {wrapperStyle} = this.props;
+    const {wrapperStyle, label, labelWrapperStyle, labelStyle} = this.props;
 
     return (
       <View style={[styles.wrapper, wrapperStyle]}>
-        {this.renderPasswordInput()}
+        <View style={labelWrapperStyle}>
+          {label &&
+          <Text style={labelStyle}>{label}</Text>
+          }
+          {this.renderPasswordInput()}
+        </View>
         {this.renderPasswordStrength()}
       </View>
     );
