@@ -130,7 +130,6 @@ export default class PasswordStrengthChecker extends Component {
         Animated.timing(this.animatedBarWidth, {
             toValue: barWidth,
             duration: 20,
-            useNativeDriver: true
         }).start();
     }
 
@@ -329,25 +328,21 @@ export default class PasswordStrengthChecker extends Component {
         Animated.timing(this.animatedInnerBar1Width, {
             toValue: innerBar1Width,
             duration: 800,
-            useNativeDriver: true
         }).start();
 
         Animated.timing(this.animatedInnerBar2Width, {
             toValue: innerBar2Width,
             duration: 800,
-            useNativeDriver: true
         }).start();
 
         Animated.timing(this.animatedInnerBar3Width, {
             toValue: innerBar3Width,
             duration: 800,
-            useNativeDriver: true
         }).start();
 
         Animated.timing(this.animatedInnerBar4Width, {
             toValue: innerBar4Width,
             duration: 800,
-            useNativeDriver: true
         }).start();
 
         return (
